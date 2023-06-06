@@ -40,3 +40,27 @@
 .read-the-docs {
   color: #888;
 }
+nav {
+  background-color: #faf7f7;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  float: inline-end;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline-block;
+  margin-right: 10px; /* Espaciado entre los elementos, ajusta según tus necesidades */
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: #fffafa;
+}
+
+
