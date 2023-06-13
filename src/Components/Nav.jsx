@@ -13,7 +13,7 @@ function Nav () {
             <div class="menu-btn"></div>
             <FontAwesomeIcon icon="bars"/>
             <div class="logo">
-                <img src="../assets/css/muni.jpg" alt="logo" />
+                <img src="../assets/tigrepag.png" alt="logo" />
                 <a href="tigre.jpg">Logo</a> </div>
              <div class="menu">
                 <a href="Municipio">Municipio</a></div>  

@@ -21,7 +21,7 @@ button {
   }
 .navbar {
   height: 90px;
-  background-color: #1a1a1a;
+  background-color: crimson;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
@@ -87,6 +87,24 @@ menu {
   }
   .menu-btn{
     display: block;
+  }
+
+  .sidebar {
+    width: 200px;
+    background-color: #f1f1f1;
+    padding: 20px;
+  }
+
+  /* Estilos para los enlaces de opciones */
+  .sidebar a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .sidebar a:hover {
+    background-color: #ddd;
   }
 }
 
