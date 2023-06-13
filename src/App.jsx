@@ -4,6 +4,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Nav from './Components/Nav'
 import './App.css'
+import DataTable from './Components/DataTable'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -22,7 +23,7 @@ function App() {
 
       
       </div>
-
+      <DataTable></DataTable>
     </>
   )
 }
