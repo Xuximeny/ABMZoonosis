@@ -15,7 +15,7 @@ function Nav () {
             <FontAwesomeIcon icon="bars"/>
             <div class="logo">
                 <img src="../assets/css/muni.jpg" alt="logo" />
-            </div>
+                <a href="tigre.jpg">Logo</a> </div>
              <div class="menu">
                 <a href="Municipio">Municipio</a></div>  
                 <button class="log-in">Cuenta</button>
