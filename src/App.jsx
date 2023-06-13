@@ -4,6 +4,9 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import Nav from './Components/Nav'
 import './App.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
+import DataTable from './Components/DataTable'
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -24,7 +27,7 @@ function App() {
 
   return (
     <>
-      <Nav />
+      <Nav></Nav>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="toggle-button" onClick={toggleSidebar}>
@@ -73,6 +76,8 @@ function App() {
           {/* Agrega más opciones según sea necesario */}
         </ul>
       </div>
+
+              <DataTable></DataTable>
 
     </>
   );
