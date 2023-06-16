@@ -12,13 +12,21 @@ font-family: sans-serif;
 a {
   text-decoration: none;
 }
-button {
-   border: 0;
-   outline: none;
-   font-family: inherit;
-   font-size: inherit;
-   cursor: pointer;
-  }
+.container {
+  position: relative;
+}
+
+.log-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+}
+.btn-custom{
+  background-color: #f1f1f1;
+  color: #f1f1f1;
+  border-radius: 0%;
+}
   
 .navbar {
   height: 90px;

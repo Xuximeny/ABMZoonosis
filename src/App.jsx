@@ -6,7 +6,10 @@ import Nav from './Components/Nav'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import DataTable from './Components/DataTable'
+import DataTable from './Components/DataTable';
+import Login from './Components/Login';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -27,7 +30,10 @@ function App() {
 
   return (
     <>
-      <Nav></Nav>
+      <div>
+        <Login></Login>
+        <Nav></Nav>
+      </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="toggle-button" onClick={toggleSidebar}>
