@@ -1,6 +1,6 @@
 import react from 'react'
-import {Button} from 'react-bootstrap';
-import {Form} from 'react-bootstrap'
+import { Button } from 'react-bootstrap';
+import { Form } from 'react-bootstrap'
 
 function Login() {
         const handleSubmit= (e) => {
@@ -11,7 +11,7 @@ function Login() {
             <div className="log-container">
             <form onSubmit={handleSubmit}>
                 <Form.Group controlId="formBasicEmail">
-                    <Form.label>Email</Form.label>
+                    <Form.Label>Email</Form.Label>
                     <Form.Control type="email" placeholder="Ingrese su email"/>
                 </Form.Group>
                 <Form.Group controlId="formBasicPassword">

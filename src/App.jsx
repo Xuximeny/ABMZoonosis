@@ -1,14 +1,13 @@
 import { useState } from 'react'
 import React from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Nav from './Components/Nav'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import DataTable from './Components/DataTable';
-import Login from './Components/Login';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import login from './Components/login';
+import Login from './Components/login';
+
 
 
 function App() {
@@ -31,8 +30,8 @@ function App() {
   return (
     <>
       <div>
-        <Login></Login>
         <Nav></Nav>
+        <Login></Login>
       </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
