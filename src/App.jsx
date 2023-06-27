@@ -4,10 +4,7 @@ import Nav from './Components/Nav'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import DataTable from './Components/DataTable';
-import login from './Components/login';
-import Login from './Components/login';
-
+import LoginModal from './Components/LoginModal';
 
 
 function App() {
@@ -31,7 +28,7 @@ function App() {
     <>
       <div>
         <Nav></Nav>
-        <Login></Login>
+        <LoginModal></LoginModal>
       </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
@@ -81,8 +78,6 @@ function App() {
           {/* Agrega más opciones según sea necesario */}
         </ul>
       </div>
-
-              <DataTable></DataTable>
 
     </>
   );

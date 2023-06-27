@@ -36,11 +36,12 @@ const LoginModal = () => {
             <Form.Group controlId="username">
               <Form.Label>Nombre de usuario</Form.Label>
               <Form.Control
-                type="text"
-                value={username}
-                onChange={(event) => setUsername(event.target.value)}
-                required
-              />
+                  type="text"
+                  value={username}
+                  onChange={(event) => setUsername(event.target.value)}
+                  required
+                  style={{ pointerEvents: 'auto' }}
+                />
             </Form.Group>
             <Form.Group controlId="password">
               <Form.Label>Contraseña</Form.Label>
