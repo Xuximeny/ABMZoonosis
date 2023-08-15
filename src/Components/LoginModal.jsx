@@ -1,64 +1,62 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
 
-const LoginModal = () => {
-  const [show, setShow] = useState(false);
+const LoginModal = ({ show, handleClose, handleLogin }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
 
-  const handleShowModal = () => {
-    setShow(true);
-  };
-
-  const handleCloseModal = () => {
-    setShow(false);
-  };
-
-  const handleSubmitModal = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
-    // Lógica para enviar y procesar el formulario del modal
-    console.log('Formulario del modal enviado');
-    handleCloseModal();
+    // Aquí puedes agregar la lógica de autenticación adecuada
+    // Por ejemplo, verificar si el nombre de usuario y contraseña son válidos
+    // Simularemos una autenticación simple con valores predefinidos
+    if (username === 'usuario' && password === 'contraseña') {
+      console.log('Inicio de sesión exitoso');
+      handleLogin();
+    } else {
+      console.log('Nombre de usuario o contraseña incorrectos');
+    }
+  };
+
+  const handleUsernameChange = (event) => {
+    setUsername(event.target.value);
+  };
+
+  const handlePasswordChange = (event) => {
+    setPassword(event.target.value);
   };
 
   return (
-    <>
-      <Button variant="primary" onClick={handleShowModal}>
-        Iniciar sesión
-      </Button>
-
-      <Modal show={show} onHide={handleCloseModal}>
-        <Modal.Header closeButton>
-          <Modal.Title>Iniciar sesión</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form onSubmit={handleSubmitModal}>
-            <Form.Group controlId="username">
-              <Form.Label>Nombre de usuario</Form.Label>
-              <Form.Control
-                  type="text"
-                  value={username}
-                  onChange={(event) => setUsername(event.target.value)}
-                  required
-                  style={{ pointerEvents: 'auto' }}
-                />
-            </Form.Group>
-            <Form.Group controlId="password">
-              <Form.Label>Contraseña</Form.Label>
-              <Form.Control
-                type="password"
-                value={password}
-                onChange={(event) => setPassword(event.target.value)}
-                required
-              />
-            </Form.Group>
-            <Button variant="primary" type="submit">
-              Iniciar sesión
-            </Button>
-          </Form>
-        </Modal.Body>
-      </Modal>
-    </>
+    <Modal show={show} onHide={handleClose}>
+      <Modal.Header closeButton>
+        <Modal.Title>Iniciar sesión</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group controlId="username">
+            <Form.Label>Nombre de usuario</Form.Label>
+            <Form.Control
+              type="text"
+              value={username}
+              onChange={handleUsernameChange}
+              required
+            />
+          </Form.Group>
+          <Form.Group controlId="password">
+            <Form.Label>Contraseña</Form.Label>
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={handlePasswordChange}
+              required
+            />
+          </Form.Group>
+          <Button variant="primary" type="submit">
+            Iniciar sesión
+          </Button>
+        </Form>
+      </Modal.Body>
+    </Modal>
   );
 };
 
