@@ -68,13 +68,7 @@ function App() {
   <input name="Nacimiento" type="date" />
   <input type="submit" value="Enviar"/>
 </form>
-<button onClick={handleShowLoginModal}>Iniciar sesión</button>
-      </div>
-      <LoginModal
-   show={showingLoginModal}
-   handleClose={handleCloseLoginModal}
-   handleLogin={handleLogin}
-   />
+</div>
     </>
   );
 }

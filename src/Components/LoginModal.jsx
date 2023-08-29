@@ -1,60 +1,79 @@
 import React, { useState } from 'react';
 import { Modal, Button, Form } from 'react-bootstrap';
+import { Formik } from 'formik';
+import { Usuarios } from '../DataSet/usuarios';
 
 const LoginModal = ({ show, handleClose, handleLogin }) => {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [loginSuccess, setLoginSuccess] = useState(false);
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    // Aquí puedes agregar la lógica de autenticación adecuada
-    // Por ejemplo, verificar si el nombre de usuario y contraseña son válidos
-    // Simularemos una autenticación simple con valores predefinidos
-    if (username === 'usuario' && password === 'contraseña') {
-      console.log('Inicio de sesión exitoso');
-      handleLogin();
-    } else {
-      console.log('Nombre de usuario o contraseña incorrectos');
-    }
-  };
-
-  const handleUsernameChange = (event) => {
-    setUsername(event.target.value);
-  };
-
-  const handlePasswordChange = (event) => {
-    setPassword(event.target.value);
+  const handleCloseWithDelay = () => {
+    setLoginSuccess(false);
+    handleClose();
   };
 
   return (
-    <Modal show={show} onHide={handleClose}>
+    <Modal show={show} onHide={loginSuccess ? handleCloseWithDelay : handleClose}>
       <Modal.Header closeButton>
         <Modal.Title>Iniciar sesión</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <Form onSubmit={handleSubmit}>
-          <Form.Group controlId="username">
-            <Form.Label>Nombre de usuario</Form.Label>
-            <Form.Control
-              type="text"
-              value={username}
-              onChange={handleUsernameChange}
-              required
-            />
-          </Form.Group>
-          <Form.Group controlId="password">
-            <Form.Label>Contraseña</Form.Label>
-            <Form.Control
-              type="password"
-              value={password}
-              onChange={handlePasswordChange}
-              required
-            />
-          </Form.Group>
-          <Button variant="primary" type="submit">
-            Iniciar sesión
-          </Button>
-        </Form>
+        <Formik
+          initialValues={{ username: '', password: '' }}
+          onSubmit={(values, { setSubmitting, setStatus }) => {
+            const foundUser = Usuarios.find(
+              (user) =>
+                user.usuario === values.username && user.contraseña === values.password
+            );
+
+            if (foundUser) {
+              console.log('Inicio de sesión exitoso');
+              setStatus('success');
+              handleLogin();
+              setLoginSuccess(true);
+              setTimeout(handleCloseWithDelay, 1000);
+            } else {
+              console.log('Nombre de usuario o contraseña incorrectos');
+              setStatus('error');
+            }
+
+            setSubmitting(false);
+          }}
+        >
+          {({ values, handleChange, handleSubmit, isSubmitting, status }) => (
+            <Form onSubmit={handleSubmit}>
+              <Form.Group controlId="usuario">
+                <Form.Label>Nombre de usuario</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="username"
+                  value={values.username}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Form.Group controlId="contraseña">
+                <Form.Label>Contraseña</Form.Label>
+                <Form.Control
+                  type="password"
+                  name="password"
+                  value={values.password}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+              <Button variant="primary" type="submit" disabled={isSubmitting}>
+                Iniciar sesión
+              </Button>
+              <div>
+                {status === 'success' ? (
+                  <p>Inicio de sesión exitoso</p>
+                ) : status === 'error' ? (
+                  <p>Nombre de usuario o contraseña incorrectos</p>
+                ) : null}
+              </div>
+            </Form>
+          )}
+        </Formik>
       </Modal.Body>
     </Modal>
   );

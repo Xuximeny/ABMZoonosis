@@ -1,43 +1,80 @@
-
+/* Estilos para la barra de navegación */
 .navbar {
   height: 70px;
-  background-color: #1a1a1a;
+  background-color: black;
   padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.logo > img {
-  width: 200px; 
-  height: 50px; 
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 200px;
+  height: auto;
   margin-left: 10px;
-  margin-bottom: 10px;
 }
 
-.nav-menu > .nav-menu{
-  width: 100%;
+.nav-menu {
+  width: 60%;
 }
-.nav__menu{
-  height: 50px;
- display: flex;
- justify-content: space-around;
- width: 100%;
- align-items: center;
- padding: 10px;
- list-style: none;
- color: #f1f1f1;
-}
-.nav__menu > li{
-  margin: 75px;
 
+/* Estilos para las opciones de navegación */
+.nav__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0;
 }
+
+.nav__menu a,
+.nav__menu li {
+  cursor: pointer; /* Cambiar el cursor a una mano */
+  transition: color 0.3s ease;
+  color: red; /* Establecer el color inicial como rojo */
+}
+
+.nav__menu a {
+  text-decoration: none;
+}
+
+/* Cambiar el color al pasar el mouse por encima */
+.nav__menu a:hover,
+.nav__menu li:hover {
+  color: white;
+}
+
+/* Estilos para la barra de búsqueda */
+.nav__menu input[type="text"] {
+  width: 500px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Icono de menú */
+.menu-btn {
+  color: white;
+  font-size: 24px;
+}
+
+/* Resto de tus estilos... */
 
 
 
   .sidebar {
-    width: 200px;
-    background-color: #f1f1f1;
-    padding: 20px;
+    width: 220px;
+    background-color: black;
+    color: red;
+    padding: 5px;
+    height: 581px;
   }
 
   
