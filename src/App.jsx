@@ -4,7 +4,7 @@ import Nav from './Components/Nav'
 import './App.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import LoginModal from './Components/LoginModal';
+import SearchModal from './Components/SearchModal';
 
 
 function App() {
@@ -26,9 +26,9 @@ function App() {
 
   return (
     <>
-      <div>
+      <div className='navbar'>
         <Nav></Nav>
-        <LoginModal></LoginModal>
+        
       </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
@@ -75,8 +75,11 @@ function App() {
               />
             )}
           </li>
-          {/* Agrega más opciones según sea necesario */}
+
         </ul>
+      </div>
+      <div>
+        <SearchModal></SearchModal>
       </div>
 
     </>
