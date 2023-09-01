@@ -1,16 +1,18 @@
-import { useState } from 'react'
-import React from 'react'
-import Nav from './Components/Nav'
-import './App.css'
+import { useState } from 'react';
+import React from 'react';
+import Nav from './Components/Nav';
+import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import SearchModal from './Components/SearchModal';
-
+import ReactDOM from 'react-dom';
+import LoginModal from './Components/LoginModal';
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
   const [textValue, setTextValue] = useState('');
   const [activeInput, setActiveInput] = useState('');
+  const [showingSearchModal, setShowSearchModal] = useState(false);
 
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
@@ -24,66 +26,59 @@ function App() {
     setActiveInput(itemName);
   };
 
+  const handleShowSearchModal = () => {
+    setShowSearchModal(true);
+  };
+
+  const handleCloseSearchModal = () => {
+    setShowSearchModal(false);
+  };
+
   return (
     <>
-      <div className='navbar'>
+
+      <div>
         <Nav></Nav>
-        
       </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="toggle-button" onClick={toggleSidebar}>
-          <FontAwesomeIcon icon={faBars} />
         </div>
-        <ul>
-          <li>
-            <a href="#" onClick={() => handleItemClick('Nombre')}>
-              Nombre
-            </a>
-            {activeInput === 'Nombre' && (
-              <input
-                type="text"
-                value={textValue}
-                onChange={handleInputChange}
-                placeholder="Escribe aquí"
-              />
-            )}
-          </li>
-          <li>
-            <a href="#" onClick={() => handleItemClick('Mes')}>
-              Mes
-            </a>
-            {activeInput === 'Mes' && (
-              <input
-                type="text"
-                value={textValue}
-                onChange={handleInputChange}
-                placeholder="Escribe aquí"
-              />
-            )}
-          </li>
-          <li>
-            <a href="#" onClick={() => handleItemClick('Dia')}>
-              Día
-            </a>
-            {activeInput === 'Dia' && (
-              <input
-                type="text"
-                value={textValue}
-                onChange={handleInputChange}
-                placeholder="Escribe aquí"
-              />
-            )}
-          </li>
 
+        {/* ... */}
+
+        <ul className="menu">
+          <li>
+            <a href="#" onClick={handleShowSearchModal}>
+              Buscar turno
+            </a>
+          </li>
         </ul>
       </div>
-      <div>
-        <SearchModal></SearchModal>
-      </div>
+
+      {/* ... */}
+
+      {showingSearchModal && (
+        <div className="modal">
+          <div className="modal-content">
+            <span className="close" onClick={handleCloseSearchModal}>
+              &times;
+            </span>
+            <ul className="modal-options">
+              <li>Nombre</li>
+              <li>DNI</li>
+              <li>Distrito</li>
+            </ul>
+          </div>
+        </div>
+      )}
+
+  
 
     </>
   );
 }
+
+ReactDOM.render(<App />, document.getElementById('root'));
 
 export default App;

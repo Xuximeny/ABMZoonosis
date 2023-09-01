@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/tigrepag.png';
+import logo from '../assets/tigremunicipio.png';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
-import ContactModal from './ContactModal'; // Ajusta la ruta según la ubicación del archivo
+import ContactModal from './ContactModal';
 
 function Nav() {
   const [showingLoginModal, setShowingLoginModal] = useState(false);
@@ -46,16 +46,18 @@ function Nav() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src={logo} alt="Logo" />
+        <a href="https://www.tigre.gob.ar">
+          <img src={logo} alt="Logo" />
+        </a>
       </div>
       <div className="nav-menu">
-        <ul className="ul__menu">
-          <a href="https://www.tigre.gob.ar">Inicio</a>
+        <ul className="nav__menu">
           <li onClick={handleShowContactModal}>Contacto</li>
           <li onClick={handleShowLoginModal}>Iniciar Sesión</li>
           <li onClick={handleShowRegisterModal}>Registrarse</li>
         </ul>
       </div>
+ 
       <LoginModal
         show={showingLoginModal}
         handleClose={handleCloseLoginModal}

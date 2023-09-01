@@ -2,6 +2,11 @@
 .navbar{
  height: 100px;
   background-color: #383838;
+}
+.navbar {
+  height: 70px;
+  background-color: black;
+  padding: 20px 40px;
   display: flex;
   justify-content: space-between;
   padding: 0px;
@@ -14,28 +19,63 @@
 .ul__menu{
   display: flex;
   align-items: center;
-  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
   align-items: center;
-  position: relative;
+}
+
+.logo img {
+  width: 90px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 10%;
+}
+
+.nav-menu {
+  width: 60%;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   list-style: none;
- padding: 0px 100px;
-} 
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0px 35px 0px 3px;
+}
 
+.nav__menu a,
+.nav__menu li {
+  cursor: pointer; 
+  transition: color 0.3s ease;
+  color: red; 
+}
 
-.navbar  img {
-  width: auto; 
-  height: 25px;  
-  margin-right: 10px;
-  position: relative;
-  
+.nav__menu a {
+  text-decoration: none;
+}
+
+.nav__menu a:hover,
+.nav__menu li:hover {
+  color: white;
 }
 
 
-
+.nav__menu input[type="text"] {
+  width: 500px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
   .sidebar {
-    width: 200px;
-    background-color: #ffffff;
-    padding: 20px;
+    width: 220px;
+    background-color: black;
+    color: red;
+    padding: 5px;
+    height: 581px;
   }
 
   
@@ -50,5 +90,24 @@
     background-color: #ddd;
   }
 
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
 
-
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+.log-in{
+  border-radius: 5%;
+  background-color: black;
+  color: #fa0d0d;
+} 
+.h1-title {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: medium;
+  justify-content: center;
+  margin: auto;
+}

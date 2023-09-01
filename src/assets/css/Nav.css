@@ -1,0 +1,26 @@
+/* nav.css */
+
+/* Estilos básicos para las opciones de navegación */
+.nav {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+  }
+  
+  .nav li {
+    margin: 0 15px;
+  }
+  
+  .nav a {
+    text-decoration: none;
+    color: red;
+    transition: color 0.3s ease;
+  }
+  
+  /* Cambiar el color al pasar el mouse por encima */
+  .nav a:hover {
+    color: white;
+  }
+  
