@@ -1,11 +1,9 @@
-import { useState } from 'react';
-import React from 'react';
+import React, { useState } from 'react';
+import ReactDOM from 'react-dom';
 import Nav from './Components/Nav';
 import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import SearchModal from './Components/SearchModal';
-import ReactDOM from 'react-dom';
 import LoginModal from './Components/LoginModal';
 
 function App() {
@@ -17,7 +15,7 @@ function App() {
   const toggleSidebar = () => {
     setSidebarOpen(!isSidebarOpen);
   };
-
+  
   const handleInputChange = (e) => {
     setTextValue(e.target.value);
   };
@@ -36,45 +34,15 @@ function App() {
 
   return (
     <>
-
       <div>
         <Nav></Nav>
       </div>
 
       <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
         <div className="toggle-button" onClick={toggleSidebar}>
+          <FontAwesomeIcon icon={faBars} />
         </div>
-
-        {/* ... */}
-
-        <ul className="menu">
-          <li>
-            <a href="#" onClick={handleShowSearchModal}>
-              Buscar turno
-            </a>
-          </li>
-        </ul>
       </div>
-
-      {/* ... */}
-
-      {showingSearchModal && (
-        <div className="modal">
-          <div className="modal-content">
-            <span className="close" onClick={handleCloseSearchModal}>
-              &times;
-            </span>
-            <ul className="modal-options">
-              <li>Nombre</li>
-              <li>DNI</li>
-              <li>Distrito</li>
-            </ul>
-          </div>
-        </div>
-      )}
-
-  
-
     </>
   );
 }

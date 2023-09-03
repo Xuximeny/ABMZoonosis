@@ -100,14 +100,3 @@ select {
   font-size: 0.9rem;
   padding: 2px 5px;
 }
-.log-in{
-  border-radius: 5%;
-  background-color: black;
-  color: #fa0d0d;
-} 
-.h1-title {
-  font-family: 'Times New Roman', Times, serif;
-  font-size: medium;
-  justify-content: center;
-  margin: auto;
-}

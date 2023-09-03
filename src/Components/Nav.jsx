@@ -10,6 +10,7 @@ function Nav() {
   const [showingLoginModal, setShowingLoginModal] = useState(false);
   const [showingRegisterModal, setShowingRegisterModal] = useState(false);
   const [showingContactModal, setShowingContactModal] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   const handleShowLoginModal = () => {
     setShowingLoginModal(true);
@@ -36,7 +37,14 @@ function Nav() {
   };
 
   const handleLogin = () => {
-    // Lógica para el inicio de sesión
+    // Lógica para el inicio de sesión exitoso
+    setIsLoggedIn(true);
+    handleCloseLoginModal();
+  };
+
+  const handleLogout = () => {
+    // Lógica para cerrar sesión
+    setIsLoggedIn(false);
   };
 
   const handleRegister = () => {
@@ -53,8 +61,17 @@ function Nav() {
       <div className="nav-menu">
         <ul className="nav__menu">
           <li onClick={handleShowContactModal}>Contacto</li>
-          <li onClick={handleShowLoginModal}>Iniciar Sesión</li>
-          <li onClick={handleShowRegisterModal}>Registrarse</li>
+          {!isLoggedIn ? (
+            <>
+              <li onClick={handleShowLoginModal}>Iniciar Sesión</li>
+              <li onClick={handleShowRegisterModal}>Registrarse</li>
+            </>
+          ) : (
+            <>
+              <li onClick={handleLogout}>Cerrar Sesión</li>
+              <li>Mis Turnos</li>
+            </>
+          )}
         </ul>
       </div>
  
