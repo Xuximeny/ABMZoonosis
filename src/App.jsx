@@ -5,6 +5,8 @@ import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import LoginModal from './Components/LoginModal';
+import FormularioIngresoDatos from './Components/solicitoturno';
+import zoonosis from './assets/zoonosis-icono-lateral.svg'
 
 function App() {
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -37,12 +39,35 @@ function App() {
       <div>
         <Nav></Nav>
       </div>
-
-      <div className={`sidebar ${isSidebarOpen ? 'open' : ''}`}>
-        <div className="toggle-button" onClick={toggleSidebar}>
-          <FontAwesomeIcon icon={faBars} />
-        </div>
+      <br />
+      <div className='header'>
+        <h1 align="center">Bienvenido al centro de turnos de Zoonosis Tigre</h1>
       </div>
+      <br />
+      <div className='solicitar-turno'>
+        <FormularioIngresoDatos></FormularioIngresoDatos>
+      </div>
+        <div class="info">
+             <div className='imagen-lateral'><img  src={zoonosis} alt="Icono lateral" /></div> 
+              <h3 class="titulo-resaltado">ZOONOSIS TIGRE</h3>
+          </div>
+      <div class="col-md-6">
+                    <h3>Requisitos para los vecinos</h3>
+                    <ul>
+                        <li>35 turnos de cirug&iacute;a por orden de llegada con el animal en la fila a partir de las 8:30 hs (un turno por animal por persona).</li>
+                        <li>Persona mayor de 18 años.</li>
+                        <li>Concurrir con DNI</li>
+                        <li>Los dueños deberán esperar en el lugar hasta que termine la cirugía.</li>
+                        <li>En caso de lluvia o mal tiempo, consultar telef&oacute;nicamente al centro de zoonosis.</li>
+                    </ul>
+                    <h3>Requisitos para las mascotas</h3>
+                    <ul>
+                        <li>Buen estado de salud, con correa y collar, mayores de 6 meses y menores de 7 años de edad(machos y hembras).</li>
+                        <li>Ayuno sólido - líquido de 12 hs.</li>
+                        <li>Si han tenido cría, se necesita dejar pasar 60 días luego de la fecha del parto.</li>
+                        <li>Traer una manta de abrigo grande.</li>
+                    </ul>
+                </div>
     </>
   );
 }

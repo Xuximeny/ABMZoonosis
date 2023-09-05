@@ -79,4 +79,4 @@ const LoginModal = ({ show, handleClose, handleLogin }) => {
   );
 };
 
-export default LoginModal;
+export default LoginModal;    
