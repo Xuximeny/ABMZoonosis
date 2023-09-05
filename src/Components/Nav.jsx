@@ -1,16 +1,18 @@
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import logo from '../assets/tmuni2.png';
+import logo from '../assets/tmuni2.jpg';
 import LoginModal from './LoginModal';
 import RegisterModal from './RegisterModal';
 import ContactModal from './ContactModal';
+import ConfirmationModal from './ConfirmationModal'; // Importa el componente de modal de confirmación
 
 function Nav() {
   const [showingLoginModal, setShowingLoginModal] = useState(false);
   const [showingRegisterModal, setShowingRegisterModal] = useState(false);
   const [showingContactModal, setShowingContactModal] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [showLogoutConfirmation, setShowLogoutConfirmation] = useState(false);
 
   const handleShowLoginModal = () => {
     setShowingLoginModal(true);
@@ -43,8 +45,14 @@ function Nav() {
   };
 
   const handleLogout = () => {
+    // Mostrar el modal de confirmación antes de cerrar sesión
+    setShowLogoutConfirmation(true);
+  };
+
+  const confirmLogout = () => {
     // Lógica para cerrar sesión
     setIsLoggedIn(false);
+    setShowLogoutConfirmation(false); // Cierra el modal de confirmación
   };
 
   const handleRegister = () => {
@@ -74,7 +82,7 @@ function Nav() {
           )}
         </ul>
       </div>
- 
+
       <LoginModal
         show={showingLoginModal}
         handleClose={handleCloseLoginModal}
@@ -88,6 +96,12 @@ function Nav() {
       <ContactModal
         show={showingContactModal}
         handleClose={handleCloseContactModal}
+      />
+
+      <ConfirmationModal
+        show={showLogoutConfirmation}
+        onClose={() => setShowLogoutConfirmation(false)}
+        onConfirm={confirmLogout}
       />
     </nav>
   );

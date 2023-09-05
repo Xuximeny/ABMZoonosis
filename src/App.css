@@ -106,3 +106,52 @@ select {
 .imagen-lateral{
  width: 80px;
 }
+/* ConfirmationModal.css */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscurecido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirmation-modal {
+  background-color: #fff; /* Fondo del modal */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.confirmation-modal p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.confirmation-modal button {
+  background-color: #007bff; /* Color de fondo del botón Sí */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-modal button:last-child {
+  background-color: #ccc; /* Color de fondo del botón No */
+  color: #000;
+}
+
+.confirmation-modal button:hover {
+  background-color: #0056b3; /* Color de fondo del botón Sí al pasar el mouse */
+}
+
+.confirmation-modal button:last-child:hover {
+  background-color: #999; /* Color de fondo del botón No al pasar el mouse */
+}
