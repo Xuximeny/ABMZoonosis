@@ -1,0 +1,166 @@
+
+.navbar{
+ height: 100px;
+  background-color: #cf0202;
+}
+.navbar {
+  height: 75px;
+  background-color: #cf0202;
+  padding: 10px 40px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0px;
+  position: inherit;
+}
+.nav-menu{
+  justify-content: space-around;
+
+}
+.ul__menu{
+  display: flex;
+  align-items: center;
+  justify-content: space-around ;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  margin-left: 10px;
+  border-radius: 10%;
+  background-image: none;
+  background-color: transparent;
+}
+
+.nav-menu {
+  width: 60%;
+}
+
+.nav__menu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+  color: #f1f1f1;
+  margin: 0;
+  padding: 0px 35px 0px 3px;
+}
+
+.nav__menu a,
+.nav__menu li {
+  cursor: pointer; 
+  transition: color 0.3s ease;
+  color: #f5f0f0; 
+}
+
+.nav__menu a {
+  text-decoration: none;
+}
+
+.nav__menu a:hover,
+.nav__menu li:hover {
+  color: rgb(0, 0, 0);
+}
+
+
+.nav__menu input[type="text"] {
+  width: 500px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+  .sidebar {
+    width: 220px;
+    background-color: black;
+    color: #ff0000;
+    padding: 5px;
+    height: 581px;
+  }
+
+  
+  .sidebar a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+  }
+
+  .sidebar a:hover {
+    background-color: #ddd;
+  }
+
+label {
+  font-family: sans-serif;
+  font-size: 1rem;
+  padding-right: 10px;
+}
+
+select {
+  font-size: 0.9rem;
+  padding: 2px 5px;
+}
+.imagen-lateral{
+ width: 80px;
+}
+/* ConfirmationModal.css */
+.modal-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo oscurecido */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.confirmation-modal {
+  background-color: #fff; /* Fondo del modal */
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.confirmation-modal p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.confirmation-modal button {
+  background-color: #007bff; /* Color de fondo del botón Sí */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin-right: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirmation-modal button:last-child {
+  background-color: #ccc; /* Color de fondo del botón No */
+  color: #000;
+}
+
+.confirmation-modal button:hover {
+  background-color: #0056b3; /* Color de fondo del botón Sí al pasar el mouse */
+}
+
+.confirmation-modal button:last-child:hover {
+  background-color: #999; /* Color de fondo del botón No al pasar el mouse */
+}
+
+.img-body{
+  border-radius: 5%;
+  height: 450px;
+  width: 650px;
+  display: flex;
+  float: right;
+  clear: right;
+}
